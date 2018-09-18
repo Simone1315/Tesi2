@@ -1,0 +1,82 @@
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rrdfs: <http://example.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+schema:name a rrdfs:functionalProperty;
+    rrdfs:isTotal schema:CreativeWork;
+    rrdfs:mandatoryFor rrdfs:assetManager;
+    rdfs:range schema:Text;
+    rdfs:label "Name"; .
+schema:genre a rrdfs:nonfunctionalProperty;
+    rrdfs:isTotal schema:CreativeWork;
+    rrdfs:mandatoryFor rrdfs:assetManager;
+    rdfs:range schema:Text;
+    rdfs:label "Genre"; .
+schema:soundtrack a rrdfs:functionalProperty;
+    rdf:type rrdfs:alreadyDefined;
+    rrdfs:isTotal schema:Movie;
+    rrdfs:mandatoryFor rrdfs:assetManager;
+    rdfs:range schema:Text;
+    rdfs:label "Soundtrack"; .
+rrdfs:hasPolicy a rrdfs:functionalProperty;
+    rrdfs:isTotal schema:CreativeWork;
+    rrdfs:choice rrdfs:navigationManager;
+    rrdfs:mandatoryFor rrdfs:assetManager;
+    rdfs:range rrdfs:Policy;
+    rdfs:label "Policy"; .
+schema:description a rrdfs:functionalProperty;
+    rrdfs:isTotal schema:CreativeWork;
+    rdfs:range schema:Text;
+    rdfs:label "Description"; .
+schema:datePublished a rrdfs:functionalProperty;
+    rrdfs:isTotal schema:CreativeWork;
+    rrdfs:mandatoryFor rrdfs:assetManager;
+    rdfs:range schema:Date;
+    rdfs:label "Date Published"; .
+schema:copyrightHolder a rrdfs:nonfunctionalProperty;
+    rrdfs:isTotal schema:CreativeWork;
+    rrdfs:mandatoryFor rrdfs:assetManager;
+    rdfs:range schema:Text;
+    rdfs:label "Copyright Holder"; .
+schema:Book rdfs:subClassOf schema:CreativeWork; .
+schema:Movie rdfs:subClassOf schema:CreativeWork; .
+schema:MusicRecording rdfs:subClassOf schema:CreativeWork; .
+schema:Book rdfs:label "Book"; .
+schema:Movie rdfs:label "Movie"; .
+schema:MusicRecording rdfs:label "Music Recording"; .
+schema:isbn a rrdfs:functionalProperty;
+    rrdfs:isTotal schema:Book;
+    rrdfs:mandatoryFor rrdfs:assetManager;
+    rdfs:range schema:Text;
+    rdfs:label "ISBN"; .
+schema:numberOfPages a rrdfs:functionalProperty;
+    rrdfs:isTotal schema:Book;
+    rrdfs:mandatoryFor rrdfs:assetManager;
+    rdfs:range xsd:nonNegativeInteger;
+    rdfs:label "Number of Pages"; .
+schema:director a rrdfs:nonfunctionalProperty;
+    rrdfs:isTotal schema:Movie;
+    rrdfs:mandatoryFor rrdfs:assetManager;
+    rdfs:range schema:Text;
+    rdfs:label "Director"; .
+schema:actor a rrdfs:nonfunctionalProperty;
+    rrdfs:isTotal schema:Movie;
+    rdfs:range schema:Text;
+    rdfs:label "Actor"; .
+schema:duration a rrdfs:functionalProperty;
+    rrdfs:isTotal schema:Movie;
+    rrdfs:mandatoryFor rrdfs:assetManager;
+    rdfs:range schema:Text;
+    rdfs:label "Duration"; .
+schema:byArtist a rrdfs:functionalProperty;
+    rrdfs:isTotal schema:MusicRecording;
+    rrdfs:mandatoryFor rrdfs:assetManager;
+    rdfs:range schema:Text;
+    rdfs:label "Artist"; .
+schema:inAlbum a rrdfs:nonfunctionalProperty;
+    rrdfs:isTotal schema:MusicRecording;
+    rdfs:range schema:Text;
+    rdfs:label "Album"; .

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="log4j-1.2-api-2.11.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/Tesi/apache-log4j-2.11.1-bin/log4j-1.2-api-2.11.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

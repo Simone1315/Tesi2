@@ -1,0 +1,14 @@
+@prefix tdb:     <http://jena.hpl.hp.com/2008/tdb#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ja:      <http://jena.hpl.hp.com/2005/11/Assembler#> .
+@prefix ab:      <http://learningsparql.com/ns/addressbook#> .
+
+[] ja:loadClass "org.apache.jena.tdb.TDB" .
+tdb:DatasetTDB  rdfs:subClassOf  ja:RDFDataset .
+tdb:GraphTDB    rdfs:subClassOf  ja:Model      .
+ab:richard      ab:email         "richard49@gmail.com" .
+
+<#dataset> rdf:type         tdb:DatasetTDB ;
+    tdb:location "C:/Users/simone/IdeaProjects/Tesi2/DB" ;
+    .

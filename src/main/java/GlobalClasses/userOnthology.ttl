@@ -1,0 +1,73 @@
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rrdfs: <http://example.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+vcard:hasEmail a rrdfs:functionalProperty;
+    rrdfs:isTotal vcard:Kind;
+    rrdfs:mandatoryFor rrdfs:userManager;
+    rdfs:range schema:Text;
+    rdfs:label "E-mail"; .
+rrdfs:hasPassword a rrdfs:functionalProperty;
+    rrdfs:isTotal vcard:Kind;
+    rrdfs:mandatoryFor rrdfs:userManager;
+    rdfs:range schema:accessCode;
+    rdfs:label "Password"; .
+vcard:hasAddress a rrdfs:functionalProperty;
+    rrdfs:isTotal vcard:Kind;
+    rrdfs:mandatoryFor rrdfs:userManager;
+    rdfs:range vcard:Address;
+    rdfs:label "Address"; .
+vcard:country-name a rrdfs:functionalProperty;
+    rrdfs:isTotal vcard:Address;
+    rrdfs:mandatoryFor rrdfs:userManager;
+    rdfs:range schema:Text;
+    rdfs:label "Country name"; .
+vcard:locality a rrdfs:functionalProperty;
+    rrdfs:isTotal vcard:Address;
+    rrdfs:mandatoryFor rrdfs:userManager;
+    rdfs:range schema:Text;
+    rdfs:label "Locality"; .
+vcard:postal-code a rrdfs:functionalProperty;
+    rrdfs:isTotal vcard:Address;
+    rrdfs:mandatoryFor rrdfs:userManager;
+    rdfs:range schema:Text;
+    rdfs:label "Postal Code"; .
+vcard:street-address a rrdfs:functionalProperty;
+    rrdfs:isTotal vcard:Address;
+    rrdfs:mandatoryFor rrdfs:userManager;
+    rdfs:range schema:Text;
+    rdfs:label "Street Address"; .
+vcard:hasTelephone a rrdfs:functionalProperty;
+    rrdfs:isTotal vcard:Kind;
+    rrdfs:mandatoryFor rrdfs:userManager;
+    rdfs:range vcard:telephone;
+    rdfs:label "Telephone"; .
+vcard:hasValue a rrdfs:functionalProperty;
+    rrdfs:isTotal vcard:telephone;
+    rrdfs:mandatoryFor rrdfs:userManager;
+    rdfs:range schema:Text;
+    rdfs:label "Number"; .
+
+vcard:individual rdfs:subClassOf vcard:Kind; .
+vcard:organization rdfs:subClassOf vcard:Kind; .
+vcard:individual rdfs:label "Individual"; .
+vcard:organization rdfs:label "Organization"; .
+vcard:fn a rrdfs:functionalProperty;
+    rrdfs:isTotal vcard:individual;
+    rrdfs:mandatoryFor rrdfs:userManager;
+    rdfs:range schema:Text;
+    rdfs:label "Full Name"; .
+vcard:nickname a rrdfs:functionalProperty;
+    rrdfs:isTotal vcard:individual;
+    rrdfs:mandatoryFor rrdfs:userManager;
+    rdfs:range schema:Text;
+    rdfs:label "Nickname"; .
+vcard:hasOrganizationName a rrdfs:functionalProperty;
+    rrdfs:isTotal vcard:organization;
+    rrdfs:mandatoryFor rrdfs:userManager;
+    rdfs:range schema:Text;
+    rdfs:label "Organization Name"; .
